@@ -1,10 +1,10 @@
 <?php
 
-class Application
+class Repository
 {
-    public function createRepository(AbstractFactory $abstractFactory)
+    public function createRepository(AbstractFactory $abstractFactory): RepositoryInterface
     {
         $connection = $abstractFactory->createConnection();
-        $repository = $abstractFactory->createRepository($connection);
+        return $abstractFactory->createRepository($connection);
     }
 }
